@@ -4,8 +4,9 @@ module.exports = function(app) {
 
   // todoList Routes
   app.route('/filter/:filterId')
-    .get(todoList.find_filter)
-    ;
+    .get(todoList.find_filter);
+  app.route('/search')
+     .post(todoList.searchJira);
 
 
 //   app.route('/tasks/:taskId')
