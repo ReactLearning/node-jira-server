@@ -3,10 +3,12 @@ module.exports = function(app) {
   var todoList = require('../controllers/todoListController');
 
   // todoList Routes
-  app.route('/filter/:filterId')
+  app.route('/filterLocal/:filterId')
     .get(todoList.find_filter);
-  app.route('/search')
+  app.route('/searchJiraLocal')
      .post(todoList.searchJira);
+  app.route('/userLoginLocal')
+     .post(todoList.userLogin);
 
 
 //   app.route('/tasks/:taskId')
