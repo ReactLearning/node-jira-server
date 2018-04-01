@@ -38,7 +38,7 @@ exports.userLogin = async function (req, res) {
         json: true
     };
     const response = await rp(options)
-        .then(function (parsedBody) {            
+        .then(function (parsedBody) {
             return parsedBody;
 
         })
@@ -61,7 +61,7 @@ exports.searchJira = async function (req, res) {
         body:
             {
                 "jql": req.body.searchJql,
-                "maxResults": 200
+                "maxResults": 20
             },
         json: true // Automatically stringifies the body to JSON
     };
