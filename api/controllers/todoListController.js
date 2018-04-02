@@ -11,7 +11,7 @@ exports.find_filter = async function (req, res) {
     console.log("Jira Filter called....");
     var options = {
         method: 'GET',
-        uri: 'https://jira.ibaset.com/rest/api/2/filter/' + req.params.filterId,
+        uri: 'https://jira.domain.com/rest/api/2/filter/' + req.params.filterId,
         body: {},
         json: true // Automatically stringifies the body to JSON
     };
@@ -30,7 +30,7 @@ exports.userLogin = async function (req, res) {
     var options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json;charset=UTF-8' },
-        url: 'https://jira.ibaset.com/rest/auth/latest/session',
+        url: 'https://jira.domain.com/rest/auth/latest/session',
         body: {
             "username": req.body.username,
             "password": req.body.password
@@ -50,10 +50,9 @@ exports.userLogin = async function (req, res) {
 exports.searchJira = async function (req, res) {
     console.log("From search jira");
 
-    const auth = "Basic " + new Buffer('papatel' + ":" + 'p$63562dha').toString("base64");
     var options = {
         method: 'POST',
-        uri: "https://jira.ibaset.com/rest/api/2/search",
+        uri: "https://jira.domain.com/rest/api/2/search",
         headers: {
             'Content-Type': 'application/json',
             cookie: req.body.name + '=' + req.body.value
