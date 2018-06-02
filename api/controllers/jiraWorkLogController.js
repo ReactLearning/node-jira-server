@@ -11,7 +11,7 @@ exports.findWorkLogSince = async function (req, res) {
     console.log("Find Work Log since....");
     var options = {
         method: 'GET',
-        uri: 'https://jira.ibaset.com/rest/api/2/worklog/updated?since=' + req.params.workLogSince,
+        uri: 'https://jira.site.com/rest/api/2/worklog/updated?since=' + req.params.workLogSince,
         body: {},
         json: true // Automatically stringifies the body to JSON
     };
